@@ -1,0 +1,16 @@
+deploy DEV:
+  stage: deploy
+  when: on_success
+  except:
+    changes:
+      - it/**/*
+  image: python:3.8
+  script:
+    - echo "Installing aws command line"
+    - pip install awscli
+    - aws --version
+    - echo "Extracting the production build"
+    - echo "Uploading files to AWS Bucket"
+    - aws s3 cp --recursive . s3://$NAME_S3
+     
+
