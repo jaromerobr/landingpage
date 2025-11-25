@@ -4,32 +4,47 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title> Mi Perfil</title>
-    <link rel="icon" type="image" href="./static/favicon.png">
-    <link rel="stylesheet" href="styles.css">
+    <title>CRUD DE GATOS</title>
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com/" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&display=swap" rel="stylesheet">
+    <script src="example.js" defer></script>
 </head>
+
 <body>
-    <div class="sectionOne">
-        <div style="width: 100%;">
-            <p class="tittlePage">
-                <img width="15" height="24" src="./static/location.png">
-                ESCUELA DE EMPRENDIMIENTO
-            </p>
-        </div>
-        <div style="display: flex; width: 100%;">
-            <div class="containerOne"> 
-                <img src="./static/2.png" />
-            </div>
-            <div class="containerTwo">
-                <p class="tittle"> TALLER ONLINE GRATUITO </p>
-                <p class="description"> Cómo escribir textos persuasivos que conecten con tus clientes sin sonar desesperado por
-                    vender </p>
-                <button>   RESERVAR MI PLAZA GRATIS </button
-            </div>
-        </div>
+    <div>
+        <h3>Registro de mascotas</h3>
+        <form onsubmit="sendRegister(event)">
+            <label for="nombre">Nombre de la mascota:</label>
+            <input type="text" id="nombre" name="nombre" required>
+
+            <label for="raza">Raza:</label>
+            <input type="text" id="raza" name="raza" required>
+
+            <label for="edad">Edad:</label>
+            <input type="number" id="edad" name="edad" required>
+
+            <label for="color">Color:</label>
+            <input type="text" id="color" name="color" required>
+
+            <input type="submit" value="Registrar Mascota">
+        </form>
+    </div>
+    <br/>
+    <div>
+        <table class="tableInfo">
+            <tr>
+                <th>Nombre</th>
+                <th>Raza</th>
+                <th>Edad</th>
+                <th>Color</th>
+                <th>Acciones</th>
+            </tr>
+            <tbody id="table-body">
+            </tbody>
+        </table>
+    </div>
 </body>
+
 </html>
